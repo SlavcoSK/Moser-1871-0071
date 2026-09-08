@@ -9,6 +9,17 @@ Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E
 3. V KiCad 9 otvorte `Moser_1871.kicad_pro`.
 4. Schéma je uložená natívne ako `Moser_1871.kicad_sch`; vlastné symboly sú vložené priamo v nej. Cache knižnica ani legacy konverzia už nie sú potrebné.
 
+## PCB mapa
+
+Súbor `Moser_1871.kicad_pcb` je prvá pracovná rekonštrukcia rozloženia dosky podľa fotografií. Obsahuje:
+
+- približný obrys dosky 39 × 115 mm,
+- 35 puzdier a 96 padov na oboch stranách PCB,
+- známe konektory, ATtiny461V, oba FZT968, SS24, LED, bočníky R100 a identifikované malé súčiastky,
+- 27 pomenovaných elektrických sietí podľa doteraz potvrdenej kontinuity.
+
+Rozmery, súradnice, puzdrá a orientácie zatiaľ nie sú výrobne overené. Medené trasy neboli automaticky domyslené; viditeľné vedenia doplníme až po potvrdení meraním a presnom zameraní dosky. PCB slúži ako editovateľná mapa pre reverzné inžinierstvo, nie ako výrobný podklad.
+
 Súbor bol skonvertovaný a uložený priamo v KiCad 9. Staré `.sch`, `.pro`, `.lib`, `-cache.lib` a `sym-lib-table` preto už nie sú súčasťou aktívneho projektu.
 
 ## Pravidlá tejto rekonštrukcie
