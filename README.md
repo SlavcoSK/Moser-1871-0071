@@ -14,13 +14,15 @@ Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E
 Súbor `Moser_1871.kicad_pcb` je prvá pracovná rekonštrukcia rozloženia dosky podľa fotografií. Obsahuje:
 
 - približný obrys dosky 39 × 115 mm,
-- 127 očíslovaných pozícií, 278 padov a 63 prekov na oboch stranách PCB,
+- 130 očíslovaných pozícií, 278 padov a 63 prekov na oboch stranách PCB,
 - známe konektory, kontakty posuvného vypínača, ATtiny461V, bzučiak, oba FZT968, SS24, LED, bočníky R100, testovacie plošky a husté okolie malých súčiastok,
 - 27 pomenovaných elektrických sietí podľa doteraz potvrdenej kontinuity.
 
 Poloha, strana a orientácia súčiastok boli odhadnuté z fotografií z 8. 9. 2026. Nečitateľné prvky sú vložené ako univerzálne rezistory, kondenzátory, diódy alebo tranzistory a majú pracovné referencie `RF…`, `CF…`, `DF…`, `QF…` na prednej strane a `RB…`, `CB…`, `DB…`, `QB…` na zadnej strane. `NPF…` a `NPB…` označujú viditeľné neosadené plošky. Rozmery, presné súradnice, puzdrá, orientácie a úplnosť treba potvrdiť pod mikroskopom a meraním.
 
 Medené trasy neboli automaticky domyslené; viditeľné vedenia doplníme v ďalšej etape po kontrole osadenia a kontinuity. PCB slúži ako editovateľná mapa pre reverzné inžinierstvo, nie ako výrobný podklad.
+
+Motorové, batériové a nabíjacie spájkovacie body sú zámerne vytvorené ako samostatné jednopadové footprinty (`P_MOTOR_*`, `P_BAT_*`, `P_ADAPTER_*`). Každý bod sa preto dá v PCB editore posúvať a upravovať nezávisle od druhého pólu.
 
 Súbor bol skonvertovaný a uložený priamo v KiCad 9. Staré `.sch`, `.pro`, `.lib`, `-cache.lib` a `sym-lib-table` preto už nie sú súčasťou aktívneho projektu.
 
