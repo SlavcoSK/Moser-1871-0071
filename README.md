@@ -14,11 +14,13 @@ Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E
 Súbor `Moser_1871.kicad_pcb` je prvá pracovná rekonštrukcia rozloženia dosky podľa fotografií. Obsahuje:
 
 - približný obrys dosky 39 × 115 mm,
-- 35 puzdier a 96 padov na oboch stranách PCB,
-- známe konektory, ATtiny461V, oba FZT968, SS24, LED, bočníky R100 a identifikované malé súčiastky,
+- 127 očíslovaných pozícií, 278 padov a 63 prekov na oboch stranách PCB,
+- známe konektory, kontakty posuvného vypínača, ATtiny461V, bzučiak, oba FZT968, SS24, LED, bočníky R100, testovacie plošky a husté okolie malých súčiastok,
 - 27 pomenovaných elektrických sietí podľa doteraz potvrdenej kontinuity.
 
-Rozmery, súradnice, puzdrá a orientácie zatiaľ nie sú výrobne overené. Medené trasy neboli automaticky domyslené; viditeľné vedenia doplníme až po potvrdení meraním a presnom zameraní dosky. PCB slúži ako editovateľná mapa pre reverzné inžinierstvo, nie ako výrobný podklad.
+Poloha, strana a orientácia súčiastok boli odhadnuté z fotografií z 8. 9. 2026. Nečitateľné prvky sú vložené ako univerzálne rezistory, kondenzátory, diódy alebo tranzistory a majú pracovné referencie `RF…`, `CF…`, `DF…`, `QF…` na prednej strane a `RB…`, `CB…`, `DB…`, `QB…` na zadnej strane. `NPF…` a `NPB…` označujú viditeľné neosadené plošky. Rozmery, presné súradnice, puzdrá, orientácie a úplnosť treba potvrdiť pod mikroskopom a meraním.
+
+Medené trasy neboli automaticky domyslené; viditeľné vedenia doplníme v ďalšej etape po kontrole osadenia a kontinuity. PCB slúži ako editovateľná mapa pre reverzné inžinierstvo, nie ako výrobný podklad.
 
 Súbor bol skonvertovaný a uložený priamo v KiCad 9. Staré `.sch`, `.pro`, `.lib`, `-cache.lib` a `sym-lib-table` preto už nie sú súčasťou aktívneho projektu.
 
@@ -70,4 +72,4 @@ Rezistor pri LED tranzistore má označenie `2203`, teda 220 kΩ. V tejto verzii
 
 ## Ďalší krok
 
-Najvyššiu prioritu má doplnenie LED spoločnej napájacej vetvy a presného okolia pinu 14. Neznáme tranzistory a keramické kondenzátory budú postupne číslované a dopĺňané podľa meraní pod mikroskopom.
+V KiCad PCB editore skontrolovať polohu a otočenie pracovných referencií podľa fyzickej dosky. Následne doplniť alebo opraviť hodnoty pod mikroskopom a až potom rekonštruovať cestičky a potvrdené elektrické siete.
