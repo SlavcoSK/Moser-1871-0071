@@ -1,11 +1,11 @@
-# Moser ChromStyle Pro 1871 – pracovná schéma v0.1
+# Moser ChromStyle Pro 1871 – pracovná schéma v0.2
 
 Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E190688`, s mikrokontrolérom `ATTINY461V-10SU`.
 
 ## Otvorenie v KiCad 9
 
-1. Rozbaľte ZIP do samostatného priečinka.
-2. Otvorte `Moser_1871_v0_2.kicad_pro` v KiCad 9.
+1. Stiahnite celý repozitár cez **Code → Download ZIP** alebo ho naklonujte pomocou Git.
+2. Rozbaľte ho do samostatného priečinka a otvorte `Moser_1871_v0_2.kicad_pro` v KiCad 9.
 3. V strome projektu dvojkliknite na `Moser_1871_v0_2.sch`. Ak ho správca projektu nezobrazí, použite v editore schém **File → Open Existing Schematic**.
 4. Pri prvom uložení KiCad ponúkne konverziu zo staršieho formátu do `*.kicad_sch`. Konverziu potvrďte.
 5. Symboly sú v lokálnej knižnici `Moser_1871_RE.lib`; tabuľka `sym-lib-table` je súčasťou projektu.
