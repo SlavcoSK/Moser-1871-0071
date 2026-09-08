@@ -1,0 +1,23 @@
+ID_na_scheme,Potlac_na_suciastke,Predbezna_hodnota_typ,Potvrdeny_spoj_A,Potvrdeny_spoj_B,Stav_poznamka
+U1,ATTINY461V-10SU,MCU SOIC20,,,pinout z oficialneho datasheetu
+Q_LED,3B,pravdepodobne PNP,BAT+ na E,LED_COMMON na C,B a presny SOT23 pinout otvorene
+Q14,3B,BJT typ overit,R14_B na C,,B a E otvorene
+R14_IN,103,10 kOhm,U1 pin14,R14_A,potvrdene
+R14_A,5602,56 kOhm,R14_IN,R14_B uzol,paralelne s C14_A; fyzicke poradie overit
+C14_A,bez potlace,nezname,R14_A pin1,R14_A pin2,potvrdene paralelne
+R14_B,5602,56 kOhm,R14_A uzol,Q14 C,fyzicke poradie overit
+R_LED1,151,150 Ohm,U1 pin12,D1 cervena,potvrdene
+R_LED2,151,150 Ohm,U1 pin3,D2 zelena,potvrdene
+R_LED3,151,150 Ohm,U1 pin8,D3 zelena,potvrdene
+R_LED4,151,150 Ohm,U1 pin1,D4 zelena plne,potvrdene
+R_LED_AREA,2203,220 kOhm,,,pri Q_LED; ziadny pin nepotvrdeny na GND
+RSH1,R100,0.1 Ohm,paralelne RSH2,R19_IN vetva,topologia koncov este doplnit
+RSH2,R100,0.1 Ohm,paralelne RSH1,R19_IN vetva,topologia koncov este doplnit
+RSH3,R100,0.1 Ohm,paralelne RSH4,R20_IN vetva,topologia koncov este doplnit
+RSH4,R100,0.1 Ohm,paralelne RSH3,R20_IN vetva,topologia koncov este doplnit
+R19_IN,103,10 kOhm,shunt 1-2,U1 pin19,podla doterajsej kontinuity
+R20_IN,104,100 kOhm,shunt 3-4,U1 pin20,s filtrom C20
+Q_CHG,FZT968,PNP vykonovy,,,nabijacia vetva
+Q_MOT,FZT968,PNP vykonovy,,,motorova vetva
+QDRV_CHG,6CW,BJT typ a pinout overit,U1 pin2,RBASE_CHG vetva,potvrdit terminaly
+QDRV_MOT,6CW,BJT typ a pinout overit,U1 pin4,RBASE_MOT vetva,potvrdit terminaly
