@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "Moser_1871_RE")(type "Legacy")(uri "${KIPRJMOD}/Moser_1871_RE.lib")(options "")(descr "Self-contained reverse-engineering symbols"))
-)
