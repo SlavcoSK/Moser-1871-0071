@@ -1,18 +1,15 @@
-# Moser ChromStyle Pro 1871 – pracovná schéma v0.3
+# Moser ChromStyle Pro 1871 – natívna pracovná schéma KiCad 9
 
 Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E190688`, s mikrokontrolérom `ATTINY461V-10SU`.
 
 ## Otvorenie v KiCad 9
 
 1. Stiahnite celý repozitár cez **Code → Download ZIP** alebo ho naklonujte pomocou Git.
-2. Rozbaľte ho do samostatného priečinka a otvorte `Moser_1871_v0_2.kicad_pro` v KiCad 9.
-3. V strome projektu dvojkliknite na `Moser_1871_v0_2.sch`. Ak ho správca projektu nezobrazí, použite v editore schém **File → Open Existing Schematic**.
-4. Súbor `Moser_1871_v0_2-cache.lib` musí zostať v rovnakom priečinku ako schéma. Obsahuje vlastné symboly potrebné pri načítaní legacy schémy.
-5. KiCad upozorní, že schéma bola vytvorená staršou verziou. Ide o očakávanú jednorazovú konverziu formátu, nie o chybu zapojenia. Pokračujte v otvorení.
-6. Po úplnom načítaní použite **Súbor → Uložiť ako** a uložte schému ako `Moser_1871.kicad_sch`. Tým vznikne natívna schéma KiCad 9 so symbolmi vloženými priamo v súbore.
-7. Nový `Moser_1871.kicad_sch` nahrajte do repozitára. Po jeho overení môžu byť staré `.sch`, `.lib`, `-cache.lib` a `.pro` odstránené.
+2. Rozbaľte ho do samostatného priečinka.
+3. V KiCad 9 otvorte `Moser_1871.kicad_pro`.
+4. Schéma je uložená natívne ako `Moser_1871.kicad_sch`; vlastné symboly sú vložené priamo v nej. Cache knižnica ani legacy konverzia už nie sú potrebné.
 
-Verzia v0.2 opravila chybu načítania na pôvodnom prázdnom riadku 31. Verzia v0.3 dopĺňa chýbajúci `Moser_1871_v0_2-cache.lib` potrebný na bezpečnú jednorazovú konverziu vlastných symbolov.
+Súbor bol skonvertovaný a uložený priamo v KiCad 9. Staré `.sch`, `.pro`, `.lib`, `-cache.lib` a `sym-lib-table` preto už nie sú súčasťou aktívneho projektu.
 
 ## Pravidlá tejto rekonštrukcie
 
