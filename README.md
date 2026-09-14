@@ -1,77 +1,92 @@
-# Moser ChromStyle Pro 1871 – natívna pracovná schéma KiCad 9
+# Moser ChromStyle Pro 1871 – rekonštrukcia PCB a schémy
 
-Toto je prvá editovateľná rekonštrukcia dosky `Moser/Wahl 1871-7176`, PCB `E190688`, s mikrokontrolérom `ATTINY461V-10SU`.
+Reverzné inžinierstvo dosky strihacieho strojčeka **Moser/Wahl 1871-7176**, PCB **E190688**, s mikrokontrolérom **ATtiny461V-10SU**.
 
-## Otvorenie v KiCad 9
+## Aktuálne súbory
 
-1. Stiahnite celý repozitár cez **Code → Download ZIP** alebo ho naklonujte pomocou Git.
-2. Rozbaľte ho do samostatného priečinka.
-3. V KiCad 9 otvorte `Moser_1871.kicad_pro`.
-4. Schéma je uložená natívne ako `Moser_1871.kicad_sch`; vlastné symboly sú vložené priamo v nej. Cache knižnica ani legacy konverzia už nie sú potrebné.
+- [Moser_1871_FINAL_3D_SYNC1.kicad_pcb](Moser_1871_FINAL_3D_SYNC1.kicad_pcb) – aktuálna ručne rekonštruovaná PCB; hlavný zdroj pravdy projektu.
+- [Moser_1871_FINAL_3D_SYNC1.kicad_sch](Moser_1871_FINAL_3D_SYNC1.kicad_sch) – schéma odvodená z PCB.
+- [Moser_1871_POTVRDENE_ZISTENIA.md](Moser_1871_POTVRDENE_ZISTENIA.md) – register potvrdených meraní, typov, pinoutov a otvorených bodov.
 
-## PCB mapa
+PCB a schéma majú rovnaký základ názvu, aby ich bolo možné zaradiť do jedného projektu KiCad 9. Lokálny projektový súbor `.kicad_pro` je možné vytvoriť alebo ponechať v rovnakom priečinku.
 
-Súbor `Moser_1871.kicad_pcb` je prvá pracovná rekonštrukcia rozloženia dosky podľa fotografií. Obsahuje:
+## Zásadné pravidlo rekonštrukcie
 
-- približný obrys dosky 39 × 115 mm,
-- 130 očíslovaných pozícií, 278 padov a 63 prekov na oboch stranách PCB,
-- známe konektory, kontakty posuvného vypínača, ATtiny461V, bzučiak, oba FZT968, SS24, LED, bočníky R100, testovacie plošky a husté okolie malých súčiastok,
-- 27 pomenovaných elektrických sietí podľa doteraz potvrdenej kontinuity.
+Pri rozpore platí toto poradie dôveryhodnosti:
 
-Poloha, strana a orientácia súčiastok boli odhadnuté z fotografií z 8. 9. 2026. Nečitateľné prvky sú vložené ako univerzálne rezistory, kondenzátory, diódy alebo tranzistory a majú pracovné referencie `RF…`, `CF…`, `DF…`, `QF…` na prednej strane a `RB…`, `CB…`, `DB…`, `QB…` na zadnej strane. `NPF…` a `NPB…` označujú viditeľné neosadené plošky. Rozmery, presné súradnice, puzdrá, orientácie a úplnosť treba potvrdiť pod mikroskopom a meraním.
+1. meranie a sledovanie spojov na originálnej PCB,
+2. čitateľná fotografia originálnej dosky,
+3. aktuálny ručne opravený PCB súbor,
+4. datasheet jednoznačne identifikovanej súčiastky,
+5. staré automatické siete, staré schémy a odhady podľa markingu.
 
-Medené trasy neboli automaticky domyslené; viditeľné vedenia doplníme v ďalšej etape po kontrole osadenia a kontinuity. PCB slúži ako editovateľná mapa pre reverzné inžinierstvo, nie ako výrobný podklad.
+Geometria používateľovej PCB je nadradená. Cesty, zóny, polohy, orientácie ani číslovanie plôšok sa nemajú automaticky meniť. Schéma je rekonštrukcia z PCB, nie autorita nad originálnou doskou.
 
-Motorové, batériové a nabíjacie spájkovacie body sú zámerne vytvorené ako samostatné jednopadové footprinty (`P_MOTOR_*`, `P_BAT_*`, `P_ADAPTER_*`). Každý bod sa preto dá v PCB editore posúvať a upravovať nezávisle od druhého pólu.
+## Potvrdené tranzistory
 
-Súbor bol skonvertovaný a uložený priamo v KiCad 9. Staré `.sch`, `.pro`, `.lib`, `-cache.lib` a `sym-lib-table` preto už nie sú súčasťou aktívneho projektu.
+| Marking | Typ | Tranzistory | Pinout |
+|---|---|---|---|
+| FZT968 | FZT968 PNP, SOT-223 | T1, T2 | 1=B, 2=C/tab, 3=E |
+| 6CW | BC817-40 NPN, SOT-23 | T4, T5, T6, T13, T15 | 1=B, 2=E, 3=C |
+| 1K / 1.K | BC848B NPN, SOT-23 | T3, T11 | 1=B, 2=E, 3=C |
+| 3.B | BC856B PNP, SOT-23 | T8, T9, T12, T14 | 1=B, 2=E, 3=C |
 
-## Pravidlá tejto rekonštrukcie
+Tieto identifikácie sú v KiCad súboroch označené ako **POTVRDENÉ – NEMENIŤ**.
 
-- Plné vodiče a pomenované siete predstavujú používateľom premeranú kontinuitu.
-- Otvorené vývody sú zámerné; spojenie zatiaľ nebolo spoľahlivo overené.
-- Označenie `?`, `VERIFY` alebo poznámka `pinout verify` znamená, že treba overiť hodnotu, orientáciu alebo pinout.
-- Čísla ako `151`, `103`, `104`, `5602` a `2203` sú nápisy na súčiastkach, nie pôvodné referenčné označenia výrobcu PCB.
-- Tranzistor `FZT968` je PNP bipolárny tranzistor, nie MOSFET.
-- Schéma zatiaľ nie je určená na výrobu ani na pripájanie programátora k MCU.
+### T7
 
-## Potvrdené mapovanie ATtiny461V
+- marking **HDY0**,
+- digitálny tranzistor/BRT potvrdený,
+- presný katalógový typ a vnútorné rezistory zatiaľ nepotvrdené,
+- aktuálne PCB: T7.1 = N012, T7.2 = GND, T7.3 = N010.
 
-| Fyzický pin | Funkcia v doske | Pin MCU |
-|---:|---|---|
-| 1 | zelená LED „plné“ cez 151 | PB0 |
-| 2 | riadenie nabíjacej vetvy | PB1 |
-| 3 | zelená LED cez 151 | PB2 |
-| 4 | riadenie motorovej vetvy | PB3 |
-| 5 | digitálne napájanie, namerané približne 2,50 V | VCC |
-| 6 | digitálna zem | GND |
-| 8 | zelená LED cez 151 | PB5 |
-| 12 | červená LED cez 151 | PA6 / ADC5 |
-| 13 | vypínač pripája GND | PA5 / ADC4 |
-| 14 | filtrovaná analógová vetva cez 103 a 5602 | PA4 / ADC3 |
-| 15 | analógové napájanie, namerané približne 2,50 V | AVCC |
-| 16 | analógová zem | AGND |
-| 19 | vetva bočníkov R100 č. 1 a 2 cez rezistor 103 | PA1 / ADC1 |
-| 20 | vetva bočníkov R100 č. 3 a 4 cez 104 + C | PA0 / ADC0 |
+### T10
 
-## Vetva pinu 14 – stav v0.1
+- marking **P8W** a zvislé číslo **67**,
+- digitálny tranzistor/BRT potvrdený,
+- presný katalógový typ a vnútorné rezistory zatiaľ nepotvrdené,
+- T10.1 = Adapter+,
+- T10.2 = BAT+,
+- T10.3 = R16.2.
 
-Podľa premeranej kontinuity je poradie:
+Staré identifikácie T10 ako PMBZ5246B a definitívne tvrdenie PDTC143ET sa nepovažujú za potvrdené.
 
-`pin 14 → R103 (10 kΩ) → sieť R5602 → R5602 → kolektor samostatného tranzistora 3B`
+## Diódy a indikácia
 
-Jeden z rezistorov `5602` má keramický kondenzátor pripojený paralelne na oba svoje vývody. Kondenzátor preto nie je automaticky zakreslený proti pinu 16 ani proti GND. Báza a emitor daného tranzistora `3B` ostávajú otvorené, kým sa nepremerajú.
+### D1 – ochrana motora
 
-Rezistor pri LED tranzistore má označenie `2203`, teda 220 kΩ. V tejto verzii nie je pripojený na GND, pretože taká kontinuita nebola zistená.
+- marking **S4**,
+- vpravo je anóda,
+- vľavo je katóda,
+- aktuálne číslovanie: 1=A, 2=K,
+- funkcia ochrannej/flyback diódy motora je potvrdená,
+- presný katalógový typ zostáva otvorený; SS24-class je iba pracovný kandidát.
 
-## Známe merania
+### LED stavu batérie
 
-- Nový Ni-MH pack: 3,6 V / 2000 mAh, externý test približne 1700 mAh a 6,2 Wh pri 300 mA.
-- Motor samostatne: približne 530 mA pri 4 V.
-- Pin 20 pri motore: približne 29,5 mV bez záťaže a 35 mV pri miernom pribrzdení.
-- Pin 14: približne 1,79 V pri motore a 1,84 V pri pripojenom adaptéri.
-- Automatické vypnutie motora nastalo približne pri 2,885–2,888 V packu.
+- D3, D4 a D5 sú zelené LED indikácie nabitia,
+- D6 je červená LED nízkeho/vybitého stavu,
+- pin 1 = anóda, pin 2 = katóda,
+- LED sú ovládané cez katódové vetvy.
 
-## Ďalší krok
+Potvrdené väzby:
 
-V KiCad PCB editore skontrolovať polohu a otočenie pracovných referencií podľa fyzickej dosky. Následne doplniť alebo opraviť hodnoty pod mikroskopom a až potom rekonštruovať cestičky a potvrdené elektrické siete.
+- D3.2 → R26.1; R26.2 → U1.12,
+- D4.2 → R27.1; R27.2 → U1.3,
+- D5.2 → R31.2; R31.1 → U1.8,
+- D6.2 → R34.1 → R32.1; R32.2 → T14.1.
+
+## Potvrdené merania
+
+- motor: približne **530 mA pri 4 V**,
+- akumulátor: **3,6 V / 2000 mAh**, externý test približne **1700 mAh a 6,2 Wh pri 300 mA**,
+- automatické vypnutie motora nastalo približne pri **2,885–2,888 V**,
+- R37–R40: marking R100, hodnota **0,100 Ω**,
+- R41: **0,30 Ω**,
+- JP1 a JP2: nulové MELF prepojky, DCR približne **6 mΩ**, indukčnosť pod **0,1 µH**.
+
+## Aktuálna pracovná etapa
+
+Dopĺňajú sa kontrolné plôšky **TP**. Každý TP sa najprv vytvorí a pripojí v schéme, následne sa cez aktualizáciu zo schémy prenesie do PCB a umiestni na fyzickú kontrolnú plôšku alebo koniec príslušného prekovu.
+
+Projekt je stále pracovná rekonštrukcia a zatiaľ nie je určený ako výrobný podklad.
