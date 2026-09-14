@@ -9,6 +9,16 @@ Reverzné inžinierstvo dosky strihacieho strojčeka **Moser/Wahl 1871-7176**, P
 
 PCB a schéma majú rovnaký základ názvu, aby ich bolo možné zaradiť do jedného projektu KiCad 9. Lokálny projektový súbor `.kicad_pro` je možné vytvoriť alebo ponechať v rovnakom priečinku.
 
+## 3D náhľad dosky
+
+### Predná strana – F.Cu
+
+![Moser 1871 – 3D náhľad prednej strany F.Cu](images/Moser_1871_3D_F_Cu.png)
+
+### Zadná strana – B.Cu
+
+![Moser 1871 – 3D náhľad zadnej strany B.Cu](images/Moser_1871_3D_B_Cu.png)
+
 ## Zásadné pravidlo rekonštrukcie
 
 Pri rozpore platí toto poradie dôveryhodnosti:
