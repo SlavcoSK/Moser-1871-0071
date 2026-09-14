@@ -6,7 +6,6 @@ Reverzné inžinierstvo dosky strihacieho strojčeka **Moser/Wahl 1871-7176**, P
 
 - [Moser_1871_FINAL_3D_SYNC1.kicad_pcb](Moser_1871_FINAL_3D_SYNC1.kicad_pcb) – aktuálna ručne rekonštruovaná PCB; hlavný zdroj pravdy projektu.
 - [Moser_1871_FINAL_3D_SYNC1.kicad_sch](Moser_1871_FINAL_3D_SYNC1.kicad_sch) – schéma odvodená z PCB.
-- [Moser_1871_POTVRDENE_ZISTENIA.md](Moser_1871_POTVRDENE_ZISTENIA.md) – register potvrdených meraní, typov, pinoutov a otvorených bodov.
 
 PCB a schéma majú rovnaký základ názvu, aby ich bolo možné zaradiť do jedného projektu KiCad 9. Lokálny projektový súbor `.kicad_pro` je možné vytvoriť alebo ponechať v rovnakom priečinku.
 
@@ -84,6 +83,10 @@ Potvrdené väzby:
 - R37–R40: marking R100, hodnota **0,100 Ω**,
 - R41: **0,30 Ω**,
 - JP1 a JP2: nulové MELF prepojky, DCR približne **6 mΩ**, indukčnosť pod **0,1 µH**.
+
+## Podpora projektu
+
+Ak vám táto rekonštrukcia pomohla alebo ste jej podklady použili, budeme radi, ak projektu udelíte aspoň **⭐ hviezdičku na GitHube**. Je to jednoduchý spôsob, ako oceniť čas, merania na originálnej PCB a našu spoločnú prácu vloženú do rekonštrukcie.
 
 ## Aktuálna pracovná etapa
 
